@@ -215,7 +215,7 @@ namespace JsonTreeGrid
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "JsonTreeGrid";
-            this.Text = "JsonTreeGrid";
+            this.Text = "JsonTreeGrid V1.0.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

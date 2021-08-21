@@ -14,11 +14,13 @@ namespace JsonTreeGrid
 {
     public partial class JsonTreeGrid : Form
     {
+        //Version 1.0.0
         public JsonTreeGrid()
         {
             InitializeComponent();
         }
 
+        //Da lascaire aperta, le altre si possono collassare
         private void Form1_Load(object sender, EventArgs e)
         {
             //Se l' oggetto è un JSObject, JSArray, JSArrayNK allorabisogna entrarci dentro e itarare
