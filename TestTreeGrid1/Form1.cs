@@ -21,13 +21,14 @@ namespace TestTreeGrid1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Se l' oggettto è un JSObject, JSArray, JSArrayNK allorabisogna entrarci dentro e itarare
+            //Se l' oggetto è un JSObject, JSArray, JSArrayNK allorabisogna entrarci dentro e itarare
             //l' inzio sarà un JSObjectNK
 
-            //trasferisco il value in JSObject
-            JSObject jSObject = new JSObject();
+
             ///---
             /*
+            //trasferisco il value in JSObject
+            JSObject jSObject = new JSObject();
             JSString jSString = new JSString() { Key = "key", Value = "valore" };
             JSString jSString2 = new JSString() { Key = "qwe", Value = "41244" };
             JSBool jSBool = new JSBool() { Key = "1442", Value = true };
@@ -44,7 +45,7 @@ namespace TestTreeGrid1
             jSArray.Value.Add(jSString3);
             jSObject.Value.Add(jSArray);*/
             ///---
-            
+
             //Decoder
 
             TreeNode treeNode = new TreeNode();
@@ -208,7 +209,7 @@ namespace TestTreeGrid1
                 TreeNode tempNode2 = new TreeNode();
                 if (node.Name.Equals("JSObject") || node.Name.Equals("JSObjectNK"))
                 {
-                    switch (selectDataType.buttonClicked) 
+                    switch (selectDataType.buttonClicked)
                     {
                         case "string":
                             tempNode.Name = "JSString";
@@ -249,7 +250,7 @@ namespace TestTreeGrid1
                     }
                     treeView1.SelectedNode.Nodes.Add(tempNode);
                 }
-                if (node.Name.Equals("JSArray") || node.Name.Equals("JSArrayNK"))
+                else if (node.Name.Equals("JSArray") || node.Name.Equals("JSArrayNK"))
                 {
                     switch (selectDataType.buttonClicked)
                     {
@@ -279,6 +280,21 @@ namespace TestTreeGrid1
                             break;
                     }
                     treeView1.SelectedNode.Nodes.Add(tempNode);
+                }
+                else {
+                    // Initializes the variables to pass to the MessageBox.Show method.
+                    string message = "DataType can be inserted only in Object or Array!";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    if (result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        // Closes the parent form.
+                        this.Close();
+                    }
                 }
                 
             }
