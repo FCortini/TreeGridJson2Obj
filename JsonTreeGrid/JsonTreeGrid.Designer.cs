@@ -1,5 +1,5 @@
 ﻿
-namespace TestTreeGrid1
+namespace JsonTreeGrid
 {
     partial class JsonTreeGrid
     {

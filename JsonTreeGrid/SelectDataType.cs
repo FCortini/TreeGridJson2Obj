@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestTreeGrid1
+namespace JsonTreeGrid
 {
     public partial class SelectDataType : Form
     {

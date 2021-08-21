@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestTreeGrid1
+namespace JsonTreeGrid
 {
     public partial class JsonTreeGrid : Form
     {
@@ -335,21 +335,27 @@ namespace TestTreeGrid1
                     case "JSString":
                         JSString jSString = new JSString();
                         jSString.Key = node.Text;
-                        jSString.Value = node.Nodes[0].Text;
+                        try { jSString.Value = node.Nodes[0].Text; }
+                        catch (Exception) { jSString.Value = ""; }
                         jSObjectNK.Value.Add(jSString);
                         break;
                     case "JSBool":
                         JSBool jSBool = new JSBool();
                         jSBool.Key = node.Text;
-                        if (node.Nodes[0].Text.Equals("True") ||
-                            node.Nodes[0].Text.Equals("true") ||
-                            node.Nodes[0].Text.Equals("1")) 
+                        try 
                         {
-                            jSBool.Value = true;
+                            if (node.Nodes[0].Text.Equals("True") ||
+                            node.Nodes[0].Text.Equals("true") ||
+                            node.Nodes[0].Text.Equals("1"))
+                            {
+                                jSBool.Value = true;
+                            }
+                            else
+                            {
+                                jSBool.Value = false;
+                            }
                         }
-                        else {
-                            jSBool.Value = false;
-                        }
+                        catch (Exception) { jSBool.Value = false; }
                         jSObjectNK.Value.Add(jSBool);
                         break;
                     case "JSDouble":
@@ -359,6 +365,13 @@ namespace TestTreeGrid1
                         if (double.TryParse(node.Nodes[0].Text, out tempDouble))
                         { jSDouble.Value = tempDouble; }
                         else { jSDouble.Value = -1; }
+                        try 
+                        {
+                            if (double.TryParse(node.Nodes[0].Text, out tempDouble))
+                            { jSDouble.Value = tempDouble; }
+                            else { jSDouble.Value = -1; }
+                        }
+                        catch (Exception) { jSDouble.Value = -1; }
                         jSObjectNK.Value.Add(jSDouble);
                         break;
                     case "JSNull":

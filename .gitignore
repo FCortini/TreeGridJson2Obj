@@ -1,5 +1,5 @@
-TestTreeGrid1/bin/*
-TestTreeGrid1/obj/*
-TestTreeGrid1/debug/*
+JsonTreeGrid/bin/*
+JsonTreeGrid/obj/*
+JsonTreeGrid/debug/*
 .vs/*
-TestTreeGrid1/icon/*
+JsonTreeGrid/icon/*
