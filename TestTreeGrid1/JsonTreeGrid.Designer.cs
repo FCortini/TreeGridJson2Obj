@@ -1,7 +1,7 @@
 ﻿
 namespace TestTreeGrid1
 {
-    partial class Form1
+    partial class JsonTreeGrid
     {
         /// <summary>
         ///  Required designer variable.
@@ -196,7 +196,7 @@ namespace TestTreeGrid1
             this.label1.TabIndex = 11;
             this.label1.Text = "DataType";
             // 
-            // Form1
+            // JsonTreeGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,8 +212,8 @@ namespace TestTreeGrid1
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "JsonTreeGrid";
+            this.Text = "JsonTreeGrid";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

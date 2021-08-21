@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace TestTreeGrid1
 {
-    public partial class Form1 : Form
+    public partial class JsonTreeGrid : Form
     {
-        public Form1()
+        public JsonTreeGrid()
         {
             InitializeComponent();
         }
