@@ -45,6 +45,7 @@ namespace TestTreeGrid1
             this.creditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxPath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,17 +56,18 @@ namespace TestTreeGrid1
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(625, 382);
             this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(643, 56);
+            this.textBox1.Location = new System.Drawing.Point(643, 75);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 23);
             this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(644, 85);
+            this.button1.Location = new System.Drawing.Point(643, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 23);
             this.button1.TabIndex = 2;
@@ -75,9 +77,9 @@ namespace TestTreeGrid1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(644, 114);
+            this.button2.Location = new System.Drawing.Point(643, 133);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 23);
+            this.button2.Size = new System.Drawing.Size(145, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Insert Node";
             this.button2.UseVisualStyleBackColor = true;
@@ -85,9 +87,9 @@ namespace TestTreeGrid1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(646, 143);
+            this.button3.Location = new System.Drawing.Point(643, 162);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 23);
+            this.button3.Size = new System.Drawing.Size(145, 23);
             this.button3.TabIndex = 4;
             this.button3.Text = "Remove Checked Node";
             this.button3.UseVisualStyleBackColor = true;
@@ -95,7 +97,7 @@ namespace TestTreeGrid1
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(644, 172);
+            this.button5.Location = new System.Drawing.Point(643, 191);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(145, 23);
             this.button5.TabIndex = 6;
@@ -105,7 +107,7 @@ namespace TestTreeGrid1
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(643, 201);
+            this.button6.Location = new System.Drawing.Point(643, 220);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(145, 23);
             this.button6.TabIndex = 7;
@@ -138,28 +140,28 @@ namespace TestTreeGrid1
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(119, 22);
             this.toolStripMenuItem2.Text = "New File";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(119, 22);
             this.toolStripMenuItem3.Text = "Open";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(119, 22);
             this.toolStripMenuItem4.Text = "Save";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(119, 22);
             this.toolStripMenuItem5.Text = "Exit";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
@@ -174,7 +176,7 @@ namespace TestTreeGrid1
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(106, 22);
             this.toolStripMenuItem6.Text = "Credit";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
@@ -185,11 +187,21 @@ namespace TestTreeGrid1
             this.textBoxPath.Size = new System.Drawing.Size(773, 23);
             this.textBoxPath.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(644, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "DataType";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPath);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -228,6 +240,7 @@ namespace TestTreeGrid1
         private System.Windows.Forms.ToolStripMenuItem creditToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.TextBox textBoxPath;
+        private System.Windows.Forms.Label label1;
     }
 }
 

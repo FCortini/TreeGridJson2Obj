@@ -71,6 +71,7 @@ namespace TestTreeGrid1
                     JSBool value = (JSBool)jSGeneric;
                     treeNode.Nodes.Add(value.Key);
                     treeNode.Nodes[temp_count].Nodes.Add(value.Value.ToString());
+                    treeNode.Nodes[temp_count].Nodes[0].Name = "JSBoolValue";
                     treeNode.Nodes[temp_count].Name = "JSBool";
                     temp_count++;
                 }
@@ -79,6 +80,7 @@ namespace TestTreeGrid1
                     JSDouble value = (JSDouble)jSGeneric;
                     treeNode.Nodes.Add(value.Key);
                     treeNode.Nodes[temp_count].Nodes.Add(value.Value.ToString());
+                    treeNode.Nodes[temp_count].Nodes[0].Name = "JSDoubleValue";
                     treeNode.Nodes[temp_count].Name = "JSDouble";
                     temp_count++;
                 }
@@ -87,6 +89,7 @@ namespace TestTreeGrid1
                     JSNull value = (JSNull)jSGeneric;
                     treeNode.Nodes.Add(value.Key);
                     treeNode.Nodes[temp_count].Nodes.Add("null");
+                    treeNode.Nodes[temp_count].Nodes[0].Name = "JSNullValue";
                     treeNode.Nodes[temp_count].Name = "JSNull";
                     temp_count++;
                 }
@@ -95,6 +98,7 @@ namespace TestTreeGrid1
                     JSString value = (JSString)jSGeneric;
                     treeNode.Nodes.Add(value.Key);
                     treeNode.Nodes[temp_count].Nodes.Add(value.Value.ToString());
+                    treeNode.Nodes[temp_count].Nodes[0].Name = "JSStringValue";
                     treeNode.Nodes[temp_count].Name = "JSString";
                     temp_count++;
                 }
@@ -136,26 +140,29 @@ namespace TestTreeGrid1
                 {
                     JSBoolNK value = (JSBoolNK)jSGenericNK;
                     treeNode.Nodes.Add(value.Value.ToString());
+                    treeNode.Nodes[temp_count].Name = "JSDoubleNKValue";
                     temp_count++;
                 }
                 if (jSGenericNK is JSDoubleNK)
                 {
-                    JSDouble value = (JSDouble)jSGenericNK;
-                    treeNode.Nodes.Add(value.Key);
-                    treeNode.Nodes[temp_count].Nodes.Add(value.Value.ToString());
+                    JSDoubleNK value = (JSDoubleNK)jSGenericNK;
+                    treeNode.Nodes.Add(value.Value.ToString());
+                    treeNode.Nodes[temp_count].Name = "JSDoubleNKValue";
                     temp_count++;
                 }
                 if (jSGenericNK is JSNullNK)
                 {
                     JSNullNK value = (JSNullNK)jSGenericNK;
                     treeNode.Nodes.Add("null");
+                    treeNode.Nodes[temp_count].Name = "JSNullNKValue";
                     temp_count++;
                 }
                 if (jSGenericNK is JSStringNK)
                 {
                     JSStringNK value = (JSStringNK)jSGenericNK;
                     treeNode.Nodes.Add(value.Value);
-                    treeNode.Nodes[temp_count].Name = "JSStringNK";
+                    //treeNode.Nodes[temp_count].Name = "JSStringNK";
+                    treeNode.Nodes[temp_count].Name = "JSStringNKValue";
                     temp_count++;
                 }
                 if (jSGenericNK is JSObjectNK)
@@ -181,6 +188,8 @@ namespace TestTreeGrid1
                     jSArray3.Key = "JSArrayNK";
                     jSArray3.Value = jSArray2.Value;
                     recursive_riempimentoNK(jSArray3, ref treeNode2);
+                    treeNode2.Name = "JSArrayNK";
+                    treeNode2.Text = "JSArrayNK";
                     treeNode.Nodes.Add(treeNode2);
                     temp_count++;
                 }
@@ -536,6 +545,11 @@ namespace TestTreeGrid1
         {
             new CreditForm().ShowDialog();
         }
-            
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            label1.Text = treeView1.SelectedNode.Name;
+        }
+
     }
 }
