@@ -24,10 +24,22 @@ namespace TestTreeGrid1
             //Se l' oggetto è un JSObject, JSArray, JSArrayNK allorabisogna entrarci dentro e itarare
             //l' inzio sarà un JSObjectNK
 
+            //test to replace in recursive_riempimento, under
+            //JSObject jSObject  = internalTest();
 
-            ///---
-            /*
-            //trasferisco il value in JSObject
+            TreeNode treeNode = new TreeNode();
+            //treeNode.Nodes. ("JsonFile");
+            recursive_riempimento(new JSObject(), ref treeNode);
+            treeNode.Name = "JSObjectNK";
+            treeNode.Text = "JsonFile";
+            treeView1.Nodes.Add(treeNode);
+            //treeView1.Nodes[0].Text = "JsonFile";
+            
+            resetTree();
+        }
+
+        private JSObject internalTest()
+        {
             JSObject jSObject = new JSObject();
             JSString jSString = new JSString() { Key = "key", Value = "valore" };
             JSString jSString2 = new JSString() { Key = "qwe", Value = "41244" };
@@ -43,24 +55,9 @@ namespace TestTreeGrid1
             jSArray.Key = "array1";
             JSStringNK jSString3 = new JSStringNK() { Value = "41244" };
             jSArray.Value.Add(jSString3);
-            jSObject.Value.Add(jSArray);*/
-            ///---
-
-            //Decoder
-
-            TreeNode treeNode = new TreeNode();
-            //treeNode.Nodes. ("JsonFile");
-            recursive_riempimento(new JSObject(), ref treeNode);
-            treeNode.Name = "JSObjectNK";
-            treeNode.Text = "JsonFile";
-            treeView1.Nodes.Add(treeNode);
-
-            //treeView1.Nodes[0].Text = "JsonFile";
-            
-            resetTree();
+            jSObject.Value.Add(jSArray);
+            return jSObject;
         }
-
-
 
         private void recursive_riempimento(JSObject jSObject, ref TreeNode treeNode)
         {
