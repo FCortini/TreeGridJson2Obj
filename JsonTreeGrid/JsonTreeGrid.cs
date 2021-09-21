@@ -14,7 +14,7 @@ namespace JsonTreeGrid
 {
     public partial class JsonTreeGrid : Form
     {
-        //Version 1.0.0
+        //Version 1.0.1
         public JsonTreeGrid()
         {
             InitializeComponent();
